@@ -1,0 +1,73 @@
+
+.navDefault {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    background-color: #4a4a4f; /* grey */
+}
+
+button {
+    border:none;
+    background-color: #0997d3; /* blue */
+    width:150px;
+    height:50px;
+    color:#fff; /* text color to be white */
+    text-transform:uppercase; /* common with buttons and navigation elements */
+    cursor:pointer; /* is essentially like a hand which is a visual indicator to the user that this element is clickable */
+}
+
+.dropdownMenu {
+    list-style: none; 
+    margin:0; 
+    padding:0; /* Step2e we clear out any default padding */
+    
+    position: absolute; /* Step2a we will put our positions more dynamically */
+    left:0;
+    right:0;
+    top:50px; /* we can insert top:0 and then play with chrome dev tools of where you want the dropdown list  */
+    
+    z-index: -1; /* Step3g use z-index property for elements stacked in top of each other in the third dimension Z (x,y). Set z-index to -1 so it will always be lowered than other elements that are neighboring or competing it for visibility. */
+    
+    width:150px; /* dropdown menu to match with button width */
+    
+    text-align: center; /* Step2f we will center aligned our text */
+    
+    box-shadow: 0px 6px 10px 0px rgba(0,0,0,0.2); /* Step2b and we can use the cssmatic to find out */
+
+    transform: translateY(-100%); /* Step3d you want to make button visible when you hover over the button. To do that through transf. translation. -100% off the screen hidden. Common technique. */
+
+    transition: transform .5s ease-in-out; /* Step3f we use a transform to make it more visually appealing */
+}
+
+
+.dropdownLink {
+    text-decoration: none; /* Step2c */
+    display:block; /* add additional styles to our links */
+    background-color: #f9f9f9;
+    color: #4a4a4f;
+    padding:10px 5px;
+    
+    transition: background-color .5s ease-in-out, color .5s ease-in-out ; /* Step2g style our links so when we hover has a delay. we do this using transition */
+}
+
+
+.dropdownLink:hover { /* Step2d */
+    color:#fff;
+    background-color: #a0a0a3;
+}
+
+
+.dropdown {
+    width: 150px; /* Step3b set div to 150px which matches the width of the button and set position relative  */
+    position: relative; /* position relative to the fixed position of the button itself */
+}
+
+.dropdown:hover button { /* Step3c when you hover over, dropdown button will be affected */
+    background-color: #018ec5;
+}
+
+
+.dropdown:hover .dropdownMenu { /* Step3e */
+    transform: translateY(0);
+}
